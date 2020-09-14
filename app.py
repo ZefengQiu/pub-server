@@ -1,16 +1,15 @@
 from flask import Flask
 from routers.router import init_routes
-from services.stateService import StateService
-
+from services.mock_db import MockDataBase
 
 app = Flask(__name__)
 
 
 if __name__ == "__main__":
 
-	init_routes(app)
+	# Load data from mock db, in practice will choose to use dynamodb (big table database) or redis
+	db = MockDataBase([], {})
 
-	# Load all states from db to memory
-	StateService().get_all_states()
+	init_routes(app, db)
 
-	app.run(debug=True)
+	app.run(debug=True, port=8000)
