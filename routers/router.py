@@ -6,6 +6,7 @@ from services.subscriber_service import SubscriberService
 def init_routes(app, db):
 
 	if app and db:
+
 		sub = SubscriberService(db)
 		pub = PublisherService(db)
 		event_service = EventService(db.get_events())

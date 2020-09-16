@@ -14,4 +14,5 @@ class MockDataBase:
 	def save_topics(self, topics):
 		self.__topics = topics
 
-
+	def save_events(self, events):
+		self.__events = events
