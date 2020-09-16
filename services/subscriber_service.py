@@ -19,6 +19,7 @@ class SubscriberService:
 
 			self.__db.save_topics(topics)
 
-			return jsonify({"msg": "url has been added"}), 200
+			return jsonify({"msg": url + " is subscribe to topic " + topic}), 200
+
 		else:
 			return jsonify({"error": "request body is invalid, plz provide url"}), 400

@@ -7,7 +7,7 @@ def init_routes(app, db):
 
 	if app and db:
 		sub = SubscriberService(db)
-		pub = PublisherService()
+		pub = PublisherService(db)
 		event_service = EventService(db.get_events())
 
 		app.add_url_rule('/subscribe/<string:topic>', 'subscribe_topic', sub.subscribe_topic, methods=["POST"])
