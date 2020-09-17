@@ -16,4 +16,4 @@ if __name__ == "__main__":
 
 	init_routes(app, db)
 
-	app.run(debug=True, port=8000)
+	app.run(debug=True, port=6000)
